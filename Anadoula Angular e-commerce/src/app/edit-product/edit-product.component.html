@@ -1,0 +1,224 @@
+
+<app-navbar></app-navbar>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="formbold-main-wrapper" style="direction: rtl; text-align: right;">
+      <!-- Author: FormBold Team -->
+      <!-- Learn More: https://formbold.com -->
+      <div class="formbold-form-wrapper">
+        <h1>تعديل المنتج </h1>
+        <form
+          [formGroup]="addproductform"
+          (ngSubmit)="submitaddproductform(addproductform)"
+        >
+          <div class="formbold-input-wrapp formbold-mb-3 form-group">
+            <label for="firstname" class="formbold-form-label">
+              اسم المنتج
+            </label>
+
+            <input
+              type="text"
+              formControlName="name"
+              name="firstname"
+              id="firstname"
+              aaria-describedby="category-name2"
+              placeholder="اسم المنتج"
+              class="formbold-form-input"
+            />
+          </div>
+
+          <!-- <div class="formbold-input-wrapp formbold-mb-3 form-group">
+            <label for="firstname" class="formbold-form-label"> الكمية </label>
+
+            <input
+              type="number"
+              formControlName="name"
+              name="firstname"
+              id="firstname"
+              aaria-describedby="category-name2"
+              placeholder="الكمية"
+              formControlName="quantity"
+              class="form-control input"
+              class="formbold-form-input"
+            />
+          </div> -->
+
+          <div class="formbold-mb-3">
+            <label class="formbold-form-label">النوع</label>
+            <br>
+            <input type="radio" id="isavailable" [value]="isavailable" name="isavailable" formControlName="isavailable" required />
+            <label for="isavailable">متاح</label>
+    
+            <input type="radio" id="isnotavailable" [value]="isnotavailable" name="isavailable" formControlName="isavailable" required />
+            <label for="isavailable">غير متاح</label>
+          </div>
+
+          <div class="formbold-input-wrapp formbold-mb-3 form-group">
+            <label for="firstname" class="formbold-form-label"> السعر </label>
+
+            <input
+              type="number"
+              formControlName="name"
+              name="firstname"
+              id="firstname"
+              aaria-describedby="category-name2"
+              placeholder="السعر"
+              formControlName="price"
+              class="form-control input"
+              class="formbold-form-input"
+            />
+          </div>
+
+          <div class="formbold-mb-3 form-group" (change)="selectImage($event)">
+            <label for="category-name2" class="formbold-form-label">
+              صورة المنتج
+            </label>
+            <input
+              type="file"
+              aria-describedby="category-name2"
+              name="upload"
+              formControlName="imagePath"
+              id="upload"
+              class="formbold-form-input formbold-form-file"
+            />
+          </div>
+
+          <div class="formbold-input-wrapp formbold-mb-3 form-group">
+            <label class="formbold-form-label">القسم</label>
+            <div class="formbold-mb-3">
+              <select
+                class="formbold-form-input"
+                name="occupation"
+                id="occupation"
+                formControlName="subCategoryId"
+              >
+                <option *ngFor="let item of subcategories" [value]="item.id">
+                  {{ item.name }}
+                </option>
+              </select>
+            </div>
+          </div>
+
+          <div class="formbold-input-wrapp formbold-mb-3 form-group">
+            <label for="firstname" class="formbold-form-label">
+              عن المنتج
+            </label>
+
+            <input
+              type="text"
+              formControlName="description"
+              name="firstname"
+              id="firstname"
+              aaria-describedby="category-name2"
+              placeholder="اكتب وصف المنتج "
+              class="formbold-form-input"
+            />
+          </div>
+
+          <button class="formbold-btn">اضافة</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
+<app-footer></app-footer>
+<!-- <div class="body">
+
+    <div class="col-12 space">
+    </div>
+    <div>
+        <h2 class=" titlee ">إضافة منتج جديد </h2>
+    </div>
+
+    <div class="container">
+
+        <div class="col-12 space ">
+        </div>
+
+        <form [formGroup]='addproductform' (ngSubmit)='submitaddproductform(addproductform)'>
+
+            <div class="row ">
+                <div class="col-6  container-fluid ">
+
+                    <div class="form-group row ">
+                        <input type="hidden" formControlName='id' class=" form-control-file inputfile input" id="product-id">
+                    </div>
+
+
+                    <div class="form-group row ">
+                        <input type="file" formControlName='imagePath'  (change)="selectImage($event)" class=" form-control-file inputfile input" id="product-img">
+                        <label for="product-img " class=" labell" id="choose">اختر صورة المنتج </label>
+
+                    </div>
+                    <div class="form-group row ">
+                        <select class="form-control form-control-sm input selector " formControlName='subCategoryId'>
+                            <option *ngFor="let item of subcategories" [value]="item.id">{{item.name}}</option>
+                        </select>
+                        <label class="labell " for="product-subcategory">القسم </label>
+                    </div>
+
+
+                    <div class="form-group row ">
+                        <input type="text" formControlName='description' class="form-control input " id="product-discribtion"
+                            placeholder="اكتب وصف المنتج ">
+
+                        <label class="labell " for="product-discribtion">عن المنتج </label>
+                    </div>
+
+                </div>
+                <div class="col-6 ">
+
+                    <div class="product-info ">
+
+                        <div class="form-group row ">
+                            <input type="text" formControlName='name' class=" form-control input" id="product-name"
+                                aria-describedby="product-name">
+                            <label class=" labell" for="product-name">إسم المنتج</label>
+                        </div>
+                        
+                        <div class="form-group row ">
+                            <input type="text" formControlName='quantity' class=" form-control input" id="product-quantity"
+                                aria-describedby="product-quantity">
+                            <label class=" labell" for="product-quantity">الكميه </label>
+                        </div>
+
+
+                        <div class="form-group row ">
+                            <input type="number" formControlName='price'  class="  form-control input" id="product-price">
+
+                            <label class="labell " for="product-price">السعر </label>
+                        </div>
+
+
+                    
+
+                    </div>
+                    <button type="submit" class="btn submit">إضافة</button>
+
+
+                </div>
+            </div>
+        </form>
+
+       
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+</div> -->

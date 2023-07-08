@@ -1,0 +1,54 @@
+<nav class="navbar navbar-expand-lg fixed-navbar navvv" style="direction: rtl;">
+  <div class="container-fluid">
+
+    <div class="d-flex align-items-center">
+      <a class="navbar-brand" routerLink="/Home">
+        <img loading="lazy" src="/assets/logo.jpg" alt="logo" name="logo" height="100"
+          style="width:4rem; height: 4rem; border-radius: 2rem;">
+      </a>
+
+      <a class="navbar-brand stop1" style="font-weight: bold; font-size: x-large; color: #0f62c6;" routerLink="/Home"></a>
+    </div>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+     data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+     aria-expanded="false" aria-label="Toggle navigation">
+      <span><i class="fa-solid fa-sliders"></i></span>
+    </button>
+  
+      <div class="collapse navbar-collapse stop" style="text-align: right;" id="navbarNavDropdown">
+        <ul class="navbar-nav text-end" id="navUl">
+          <li class="nav-item">
+            
+            <a class="nav-link" *ngIf="isLogin" routerLink="/admin">إعدادات المدير <i class="fa-solid fa-users"></i></a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" *ngIf="isLogin">إضافة</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" routerLink="/addcat">فئة</a>
+              <a class="dropdown-item" routerLink="/addsubcat">قسم</a>
+              <a class="dropdown-item" routerLink="/addproduct">منتج</a>
+              <a class="dropdown-item" routerLink="/adddiscount">خصم</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" *ngIf="isLogin">عرض</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" routerLink="/showcat">الفئات</a>
+              <a class="dropdown-item" routerLink="/showsubcat">الأقسام</a>
+              <a class="dropdown-item" routerLink="/showproduct">المنتجات</a>
+              <a class="dropdown-item" routerLink="/showadmin">المديرين</a>
+              <a class="dropdown-item" routerLink="/showdiscount">الخصومات</a>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" *ngIf="isLogin" routerLink="#">المدفوعات<i class="fa-regular fa-credit-card"></i></a></li>
+          <li class="nav-item"><a class="nav-link" *ngIf="isLogin" routerLink="/order">الطلبات <i class="fa-solid fa-bag-shopping"></i></a></li>
+          <li class="nav-item">
+            <a class="nav-link" *ngIf="isLogin" routerLink="/contacts">تواصل معنا <i class="fa-solid fa-comments"></i></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="LogOut()" *ngIf="isLogin" routerLink="#">تسجيل خروج<i class="fa-solid fa-user-minus fa-lg"></i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>

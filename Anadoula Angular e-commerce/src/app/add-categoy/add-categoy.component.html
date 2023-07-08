@@ -1,0 +1,109 @@
+<app-navbar></app-navbar>
+
+
+    <div class="formbold-main-wrapper" style="text-align: right; direction: rtl;">
+ 
+      <div class="formbold-form-wrapper">
+        <h1>اضافة فئة جديدة</h1>
+        <form
+          [formGroup]="addcategoryform"
+          (ngSubmit)="submitaddcategoryform(addcategoryform)"
+        >
+          <div class="formbold-input-wrapp formbold-mb-3 form-group">
+            <label for="firstname" class="formbold-form-label">
+              اسم الفئة
+            </label>
+
+            <input
+              type="text"
+              formControlName="name"
+              name="firstname"
+              id="firstname"
+              aaria-describedby="category-name2"
+              placeholder="اسم الفئة"
+              class="formbold-form-input"
+            />
+            <div  *ngIf="addcategoryform.get('name')?.errors != null
+            && addcategoryform.get('name')?.touched" class="alert mt-2 alert-danger">
+            <p  *ngIf="addcategoryform.get('name')?.errors?.['required']">الاسم مطلوب</p>
+
+          </div>
+          </div>
+
+          <div class="formbold-mb-3 form-group" (change)="selectImage($event)">
+            <label for="category-name2" class="formbold-form-label">
+              صورة الفئة
+            </label>
+            <input
+              type="file"
+              aria-describedby="category-name2"
+              name="upload"
+              formControlName="imagePath"
+              id="upload"
+              class="formbold-form-input formbold-form-file"
+            />
+            <div  *ngIf="addcategoryform.get('imagePath')?.errors != null
+            && addcategoryform.get('imagePath')?.touched" class="alert mt-2 alert-danger">
+            <p  *ngIf="addcategoryform.get('imagePath')?.errors?.['required']">القسم مطلوب</p>
+
+          </div>
+          </div>
+
+          <input type="submit" value="اضافه" class="formbold-btn"/>
+        </form>
+      </div>
+    </div>
+    <app-footer></app-footer>
+
+<!-- <div class="body">
+    <div class="col-12 space">
+    </div>
+
+    <div>
+        <h2 class=" titlee ">إضافة فئة جديدة </h2>
+    </div>
+    <div class="col-12 space">
+    </div>
+    <div class="container">
+        <div class="row">
+
+            <div class="col-12 ">
+                <form [formGroup]='addcategoryform' (ngSubmit)='submitaddcategoryform(addcategoryform)'>
+                    <div class="category-info ">
+
+                        <div class="form-group ">
+                            <input type="text" formControlName='name' class="form-control input" 
+                                aria-describedby="category-name">
+                            <label class=" labell" for="category-name">إسم الفئة </label>
+                        </div>
+
+                        <div class="form-group ">
+                            <input type="file" formControlName='imagePath' (change)="selectImage($event)" class="form-control input" 
+                                aria-describedby="category-name2">
+                            <label class=" labell" for="category-name2">صوره الفئة </label>
+                        </div>
+                        
+
+                        <button type="submit" class="btn submit">إضافة</button>
+
+                    </div>
+                </form>
+            </div>
+
+
+            <div class="col-12 space ">
+            </div>
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+    </div>
+</div> -->

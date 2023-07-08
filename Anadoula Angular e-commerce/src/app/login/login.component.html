@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anadolu</title>
+</head>
+<body>
+
+
+    <section class="h-100 gradient-form" style="background-color: #eee; direction: rtl;">
+        <div class="py-5 cont ">
+            <div class="row d-flex justify-content-center align-items-center">
+              <div class="col-xl-4">
+                <div class="card rounded-3 text-black">
+                  <div class="row g-0">
+                    <div>
+                      <div class="card-body p-md-5 mx-md-4">
+      
+                     <div class="text-center">
+                        <img class="logo" src="/assets/logo.jpeg" style="width: 100px;" alt="logo">
+                        <h4 class="mt-1 mb-5 pb-1">لديك حساب</h4>
+                      </div>
+      
+                      <form [formGroup]='LoginForm' (ngSubmit)="submitLoginForm(LoginForm)">
+
+                     <div class="form-outline mb-4">
+                            <label for="UserName">اسم المستخدم </label>
+                            <input class="form-control" type="text" formControlName="UserName">
+                            <div *ngIf="LoginForm.get('UserName')?.errors != null
+                              && LoginForm.get('UserName')?.touched" class="alert mt-2 alert-danger">
+                              <p *ngIf="LoginForm.get('UserName')?.errors?.['required']">الاسم مطلوب</p>
+                              <p *ngIf="LoginForm.get('UserName')?.errors?.['minLength']">الاسم يجب أن يكون أكثر من حرفين</p>
+                              <p *ngIf="LoginForm.get('UserName')?.errors?.['maxLength']">الاسم يجب أن يكون أقل من 8 حروف</p>
+                            </div>
+                          </div>
+
+                        <div class="form-outline mb-4">
+                            <label for="Password">كلمة المرور </label>
+                            <input class="form-control" type="password" formControlName="Password">
+                            <div *ngIf="LoginForm.get('Password')?.errors != null
+                            && LoginForm.get('Password')?.touched" class="alert mt-2 alert-danger">
+                              <p *ngIf="LoginForm.get('Password')?.errors?.['required']">كلمة المرور مطلوبة</p>
+                              <!-- <p *ngIf="LoginForm.get('Password')?.errors?.['pattern']">Password invalid!</p> -->
+                            </div>
+                          </div>
+
+      
+
+                        <div class="text-center pt-1 mb-5 pb-1">
+                            <button [disabled]="LoginForm.invalid" type="submit" class="btn btn-outline-success">تسجيل الدخول</button>
+                            <br><br>
+                            <a class="text-muted" href="#!">نسيت كلمة المرور؟</a>
+                          </div>
+
+
+      
+                        <div class="d-flex align-items-center justify-content-center pb-4">
+                          <p class="mb-0 me-2">ليس لديك حساب؟</p>
+                          <button type="button"  routerLink="/register" class="btn btn-outline-danger">انشاء حساب</button>
+                        </div>
+      
+                      </form>
+      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    
+    
+</body>
+</html>
+
+
+
+
+

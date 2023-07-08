@@ -1,0 +1,147 @@
+<app-navbar></app-navbar>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="formbold-main-wrapper" style="direction: rtl; text-align: right;">
+      <!-- Author: FormBold Team -->
+      <!-- Learn More: https://formbold.com -->
+      <div class="formbold-form-wrapper">
+        <h1>تعديل الخصم </h1>
+        <form
+         [formGroup]='addDiscountform' (ngSubmit)='submitaddDiscountform(addDiscountform)'
+        >
+          <div class="formbold-input-wrapp formbold-mb-3 form-group">
+            <label for="firstname" class="formbold-form-label">
+              اسم المنتج
+            </label>
+
+            <select
+              class="formbold-form-input"
+              name="occupation"
+              id="occupation"
+               formControlName='productId'
+            >
+              <option *ngFor="let item of products" value="{{ item.id }}">
+                {{ item.name }}
+              </option>
+            </select>
+          </div>
+
+          <div class="formbold-input-wrapp formbold-mb-3 form-group">
+            <label for="firstname" class="formbold-form-label">
+              قيمة الخصم
+            </label>
+
+            <input
+              type="number"
+              formControlName="discountValue"
+              name="firstname"
+              id="firstname"
+              aaria-describedby="category-name2"
+              placeholder="قيمة الخصم "
+              class="formbold-form-input"
+            />
+          </div>
+
+          <div class="formbold-mb-3">
+            <label for="dob" class="formbold-form-label"> بداية الخصم </label>
+            <input
+              type="date"
+              name="dob"
+              id="dob"
+              class="formbold-form-input"
+              formControlName="discountStartDate"
+            />
+          </div>
+
+          <div class="formbold-mb-3">
+            <label for="dob" class="formbold-form-label"> نهاية الخصم </label>
+            <input
+              type="date"
+              name="dob"
+              id="dob"
+              class="formbold-form-input"
+              formControlName="discountEndDate"
+            />
+          </div>
+
+          <button class="formbold-btn">اضافة</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
+<app-footer></app-footer>
+<!-- <div class="body">
+    <div class="col-12 space">
+    </div>
+
+    <div>
+        <h2 class=" titlee ">إضافة خصم جديد </h2>
+    </div>
+    <div class="col-12 space">
+    </div>
+    <div class="container">
+        <div class="row">
+
+            <div class="col-12 ">
+                <form  [formGroup]='addDiscountform' (ngSubmit)='submitaddDiscountform(addDiscountform)'>
+                    <div class="category-info ">
+                        <div class="form-group row">
+                            <select class="form-control form-control-sm input selector  " formControlName='productId'>
+                                <option *ngFor="let item of products">{{item.name}}</option>
+                               
+                            </select>
+                            <label class="labell ">إسم المنتج  </label>
+                        </div>
+
+
+                        <div class="form-group row ">
+                            <input type="number" formControlName='discountValue' class="  form-control input" id="discount-value">
+
+                            <label class="labell " for="discount-value">قيمة الخصم </label>
+                        </div>
+
+                        <div class="form-group row ">
+                            <input type="date" formControlName='discountStartDate' class="  form-control input" id="discount-startDate">
+
+                            <label class="labell " for="discount-startDate">بدايه الخصم </label>
+                        </div>
+                        
+                        <div class="form-group row ">
+                            <input type="date" formControlName='discountEndDate' class="  form-control input" id="discount-EndDate">
+
+                            <label class="labell " for="discount-EndDate">نهايه الخصم </label>
+                        </div>
+
+
+
+
+                    </div>
+                    <button type="submit" class="btn submit">إضافة</button>
+
+                </form>
+            </div>
+
+
+            <div class="col-12 space ">
+            </div>
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+    </div>
+</div> -->

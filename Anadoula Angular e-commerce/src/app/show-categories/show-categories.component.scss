@@ -1,0 +1,115 @@
+.ul{
+    overflow-y: scroll;
+    height: 25rem;
+}
+li{
+    background-color: #aea9a164;
+}
+.body {
+    /* background-color:#fffcf7; */
+    font-size: 20px;
+    /* font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif; */
+    // background-repeat: no-repeat;
+    // background-size: 100%;
+    // background-color: #e9e1d2bc;
+
+}
+
+.space {
+    height: 5rem;
+    text-align: center;
+}
+.submit {
+
+    background-color: #fffcf7;
+    width: 6rem;
+    height: 3rem;
+    margin-top: 4rem;
+    margin-right: 35rem;
+    border: 2px solid #d3c0a3;
+    border-radius: 7px;
+
+}
+
+.submit:hover {
+    color: #fffcf7;
+    background-color: #010117;
+    border: 2px solid #fffcf7;
+}
+
+
+.labell {
+    border: 2px solid #d3c0a3;
+    background-color: #fffcf7;
+    color: black;
+    width: 10rem;
+    border-radius: 7px;
+    opacity: 0.88;
+    text-align: right;
+    margin-bottom: 2rem;
+    margin-right: 10rem;
+    // display: inline;
+}
+.input {
+    width: 18rem;
+    display: inline;
+    text-align: right;
+    height: 2rem;
+    background-color: #fffcf7;
+    border: 2px solid #d3c0a3;
+    border-radius: 7px;
+    margin-right: 3%;
+    opacity: 0.88;
+
+}
+.titlee {
+    border-radius: 7px;
+    opacity: 0.88;
+    display: flex;
+    text-align: center;
+    width: 30%;
+    height: 3rem;
+    margin-left: 35%;
+    justify-content: center;
+
+    color: #010117;
+    text-shadow:
+      -1.5px -1.5px 0 #948e85, 
+      1.5px -1.5px 0 #fffcf7,
+      -1.5px 1.5px 0 #fffcf7,  
+      1.5px 1.5px 0 #fffcf7; 
+}
+.selector {
+    height: 1.5rem;
+
+}
+
+
+.form-group {
+    justify-content: right;
+
+}
+
+#product-discribtion {
+    width: 60%;
+    height: auto;
+    /* height: 1.5rem; */
+
+}
+
+#product-price {
+    width: 5rem;
+    /* height: 1.5rem; */
+
+}
+
+
+#choose{
+    width: 15rem;
+}
+
+.category-info {
+    text-align: right;
+
+
+}

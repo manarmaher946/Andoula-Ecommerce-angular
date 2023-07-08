@@ -1,0 +1,40 @@
+<app-navbar></app-navbar>
+<div class="container-fluid" style="direction: rtl;">
+    <div class="container">
+    <div class="row">
+        
+        <div class="col-12 mt-5">
+            <br>
+        <br>
+            <h2 class="text-center">الطلبات</h2>
+        </div>
+
+        <div class="col-12 my-3">
+            <table class="table table-borderless table-hover">
+                <thead>
+                    <tr>
+                        <th>كود الطلب</th>
+                        <th>اسم العميل</th>
+                        <th>اجمالي الطلب</th>
+                        <th>تاريخ الطلب</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of Orders">
+                        <td>{{item.orderId}}</td>
+                        <td>{{item.customerName}}</td>
+                        <td>{{item.totalPrice}}</td>
+                        <td>{{item.date}}</td>
+                        <a [routerLink]="['/orderdetails', item.orderId]">
+                        <td><button class="btn btn btn-primary">تفاصيل </button></td>
+                    </a>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</div>
+
+    <app-footer></app-footer>

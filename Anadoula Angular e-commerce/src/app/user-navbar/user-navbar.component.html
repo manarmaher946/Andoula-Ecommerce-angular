@@ -1,0 +1,60 @@
+<nav class="navbar navbar-expand-lg fixed-navbar navvv" style="direction: rtl;">
+    <div class="container-fluid">
+  
+      <div class="d-flex align-items-center">
+        <a class="navbar-brand" routerLink="/Home">
+          <img loading="lazy" src="/assets/logo.jpg" alt="logo" name="logo" height="100"
+            style="width:4rem; height: 4rem; border-radius: 2rem;">
+        </a>
+  
+        <a class="navbar-brand stop1" style="font-weight: bold; font-size: x-large; color: #0f62c6;" routerLink="/Home"></a>
+      </div>
+  
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span><i class="fa-solid fa-sliders"></i></span>
+      </button>
+  
+      <div class="collapse navbar-collapse stop" style="text-align: right;" id="navbarNavDropdown">
+        <ul class="navbar-nav text-end" id="navUl">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/home">الرئيسية <i class="fa-solid fa-house"></i></a></li>
+  
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              الأقسام
+            </a>
+  
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" *ngFor="let item of subcategories" [routerLink]="['/subcat', item.id]">{{item.name}}</a>
+              <div class="dropdown-divider"></div>
+            </div>
+          </li>
+  
+          <li class="nav-item"><a class="nav-link" *ngIf="isLogin" routerLink="/cart">السلة <i
+                class="fa-solid fa-cart-shopping"></i></a>
+              </li>
+  
+          <li class="nav-item">
+            <a class="nav-link" *ngIf="isLogin" routerLink="/contact">تواصل معنا <i class="fa-solid fa-comments"></i></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" *ngIf="isLogin" routerLink="/information">معلومات عنا<i class="fa-solid fa-comments"></i></a>
+          </li>
+  
+          <li class="nav-item">
+            <a class="nav-link" *ngIf="!isLogin" routerLink="/register">إنشاء حساب <i class="fa-solid fa-user-plus"></i></a>
+          </li>
+  
+          <li class="nav-item">
+            <a class="nav-link" *ngIf="!isLogin" routerLink="/login">تسجيل دخول <i class="fa-solid fa-user-check"></i></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="LogOut()" *ngIf="isLogin" routerLink="#">تسجيل خروج <i
+                class="fa-solid fa-user-minus fa-lg"></i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>

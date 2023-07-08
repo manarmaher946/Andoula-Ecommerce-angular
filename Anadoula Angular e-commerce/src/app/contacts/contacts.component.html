@@ -1,0 +1,35 @@
+
+<app-navbar></app-navbar>
+<div class="body main" style="direction: rtl;">
+    <div>
+      <h2 class="titlee text-center">تواصل معنا</h2>
+    </div>
+  
+    <div class="container-fluid mt-5">
+      <div class="table-responsive">
+        <table class="table table-borderless table-hover tablee">
+          <thead>
+            <tr>
+              <th scope="col">اسم العميل</th>
+              <th scope="col">تاريخ الرسالة</th>
+              <th scope="col">الرسالة</th>
+              <th scope="col">الحالة</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of Messages" class="mb-3">
+              <td>{{ item.name }}</td>
+              <td>{{ item.email }}</td>
+              <td>{{ item.message }}</td>
+              <td>
+                <button (click)="deleteMessage(item.id)" class="btn btn-primary">تم التواصل</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <app-footer></app-footer>

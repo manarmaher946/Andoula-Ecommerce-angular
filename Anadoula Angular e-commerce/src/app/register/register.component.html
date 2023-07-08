@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anadolu</title>
+</head>
+<body>
+
+<section class="h-100 bg-light" style="direction: rtl;">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col">
+        <div class="card card-registration my-4">
+          <div class="row g-0">
+            <div class="col-xl-6 d-none d-xl-block">
+              <img src="/assets/bak.jpg"
+                alt="Sample photo" class="img-fluid"
+                style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem; height: 100%;" />
+            </div>
+            <div class="col-xl-6">
+              <div class="card-body p-md-5 text-black">
+                <h3 class="mb-5 text-uppercase">انشاء حساب جديد</h3> 
+
+                <form [formGroup]='registerForm' (ngSubmit)="submitRegisterForm()">
+                    
+                <div class="row">
+                  <div class="col-md-6 mb-4">
+                    <div class="form-outline">
+                        <label for="firstName">الاسم الاول  </label>
+                        <br><br>
+                        <input class="form-control" type="text" formControlName="firstName">
+                        <div *ngIf="registerForm.get('firstName')?.errors != null
+                          && registerForm.get('firstName')?.touched" class="alert mt-2 alert-danger">
+                          <p *ngIf="registerForm.get('firstName')?.errors?.['required']">الاسم مطلوب</p>
+                          <p *ngIf="registerForm.get('firstName')?.errors?.['minLength']">الاسم يجب أن يكون أكثر من حرفين</p>
+                          <p *ngIf="registerForm.get('firstName')?.errors?.['maxLength']">الاسم يجب أن يكون أقل من 8 حروف</p>
+                        </div>
+                    </div>
+                  </div>
+
+
+                  <div class="col-md-6 mb-4">
+                    <div class="form-outline">
+                        <label for="lastName"> اسم العائلة  </label>
+                        <br><br>
+                        <input class="form-control" type="text" formControlName="lastName">
+                        <div *ngIf="registerForm.get('lastName')?.errors != null
+                          && registerForm.get('lastName')?.touched" class="alert mt-2 alert-danger">
+                          <p *ngIf="registerForm.get('lastName')?.errors?.['required']">الاسم مطلوب</p>
+                          <p *ngIf="registerForm.get('lastName')?.errors?.['minLength']">الاسم يجب أن يكون أكثر من حرفين</p>
+                          <p *ngIf="registerForm.get('lastName')?.errors?.['maxLength']">الاسم يجب أن يكون أقل من 8 حروف</p>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+
+
+
+
+                <!-- <div class="form-outline mb-4">
+                    <label for="address"> العنوان </label>
+                    <br><br>
+                    <input id="inputt" class="form-control" type="text" formControlName="address">
+                </div> -->
+
+
+
+
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                      <label for="userName">اسم المستخدم  </label>
+                      <br><br>
+                      <input class="form-control" type="text" formControlName="userName">
+                      <div *ngIf="registerForm.get('userName')?.errors != null
+                        && registerForm.get('userName')?.touched" class="alert mt-2 alert-danger">
+                        <p *ngIf="registerForm.get('userName')?.errors?.['required']">اسم المستخدم مطلوب</p>
+                        <p *ngIf="registerForm.get('userName')?.errors?.['minLength']">الاسم يجب أن يكون أكثر من حرفين</p>
+                        <p *ngIf="registerForm.get('userName')?.errors?.['maxLength']">الاسم يجب أن يكون أقل من 8 حروف</p>
+                      </div>
+                  </div>
+                </div>
+
+             
+
+
+                <div class="d-md-flex justify-content-start align-items-center mb-4 py-2">
+                
+                    <label class="mb-0 me-4" for="gender">النوع</label>
+                
+                    <div class="form-check form-check-inline mb-0 me-4">
+                        <input type="radio" id="female" [value]="female" name="gender" formControlName="gender" required>
+                        <label for="female">انثي</label>
+                    </div>
+                
+                    <div class="form-check form-check-inline mb-0 me-4">
+                        <input type="radio" id="male" [value]="male" name="gender" formControlName="gender" required>
+                        <label for="male">ذكر</label>
+                    </div>
+                    <div *ngIf="submitted && registerForm.get('gender')?.errors"
+                        [ngClass]="{ 'd-block': submitted && registerForm.get('gender')?.errors }">
+                        <div *ngIf="registerForm.get('gender')?.errors?.['required']">يجب اختيار النوع</div>
+                    </div>
+                </div>
+
+               
+
+                <div class="form-outline mb-4">
+                    <div class="form-outline mb-4">
+                        <label for="birthDate">تاريخ الميلاد </label>
+                        <br><br>
+                        <input id="inputt" class="form-control" type="date" formControlName="birthDate">
+                        <div *ngIf="registerForm.get('birthDate')?.errors != null
+                        && registerForm.get('birthDate')?.touched" class="alert mt-2 alert-danger">
+                            <p *ngIf="registerForm.get('birthDate')?.errors?.['required']">تاريخ الميلاد مطلوب</p>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <div class="form-outline mb-4">
+                    <label for="email">البريد الالكتروني </label>
+                    <br><br>
+                    <input id="inputt" class="form-control" type="email" formControlName="email">
+                    <div *ngIf="registerForm.get('email')?.errors != null
+                                            && registerForm.get('email')?.touched" class="alert mt-2 alert-danger">
+                        <p *ngIf="registerForm.get('email')?.errors?.['required']">البريد الالكتروني مطلوب</p>
+                        <p *ngIf="registerForm.get('email')?.errors?.['email']">البريد الالكتروني غير صحيح</p>
+                    </div>
+                </div>
+
+
+
+
+                <div class="form-outline mb-4">
+                    <label for="password">كلمة المرور </label>
+                    <br><br>
+                    <input id="inputt" class="form-control" type="password" formControlName="password">
+                    <div *ngIf="registerForm.get('password')?.errors != null
+                    && registerForm.get('password')?.touched" class="alert mt-2 alert-danger">
+                        <p *ngIf="registerForm.get('password')?.errors?.['required']">كلمة المرور مطلوبة</p>
+                        <p *ngIf="registerForm.get('password')?.errors?.['pattern']">كلمة المرور غير صحيحة</p>
+                    </div>
+                </div>
+
+
+
+                <div class="form-outline mb-4">
+                    <label for="phoneNumber"> رقم الهاتف </label>
+                    <br><br>
+                    <input id="inputt" class="form-control" type="text" formControlName="phoneNumber">
+                </div> 
+
+                
+                <div class="d-flex justify-content-center pt-3">
+                    <button [disabled]="registerForm.invalid"  type="submit"
+                    class="btn btn-warning btn-lg ms-2">تسجيل</button>
+                </div>
+            </form>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+    
+</body>
+</html>

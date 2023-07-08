@@ -1,0 +1,165 @@
+<app-navbar></app-navbar>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="formbold-main-wrapper" style="direction: rtl; text-align: right;">
+      <!-- Author: FormBold Team -->
+      <!-- Learn More: https://formbold.com -->
+      <div class="formbold-form-wrapper">
+        <h1>اضافة قسم جديدة</h1>
+        <form
+          [formGroup]="addsubcategoryform"
+          (ngSubmit)="submitaddsubcategoryform(addsubcategoryform)"
+        >
+          <div class="formbold-input-wrapp formbold-mb-3 form-group">
+            <label for="firstname" class="formbold-form-label">
+              اسم القسم
+            </label>
+
+            <input
+              type="text"
+              formControlName="name"
+              name="firstname"
+              id="firstname"
+              aaria-describedby="category-name2"
+              placeholder="اسم القسم"
+              class="formbold-form-input"
+            />
+            <div  *ngIf="addsubcategoryform.get('name')?.errors != null
+            && addsubcategoryform.get('name')?.touched" class="alert mt-2 alert-danger">
+            <p  *ngIf="addsubcategoryform.get('name')?.errors?.['required']"> اسم القسم مطلوب</p>
+
+          </div>
+          </div>
+
+          <div class="formbold-mb-3 form-group" (change)="selectImage($event)">
+            <label for="category-name2" class="formbold-form-label">
+              صورة القسم
+            </label>
+            <input
+              type="file"
+              aria-describedby="category-name2"
+              name="upload"
+              formControlName="imagePath"
+              id="upload"
+              class="formbold-form-input formbold-form-file"
+            />
+            <div
+              *ngIf="
+                addsubcategoryform.get('imagePath')?.errors != null &&
+                addsubcategoryform.get('imagePath')?.touched
+              "
+              class="alert mt-2 alert-danger"
+            >
+              <p
+                *ngIf="addsubcategoryform.get('imagePath')?.errors?.['required']"
+              >
+                صورة القسم مطلوبه
+              </p>
+            </div>
+          </div>
+
+          <div class="formbold-input-wrapp formbold-mb-3 form-group">
+            <label class="formbold-form-label">الفئة</label>
+            <div class="formbold-mb-3">
+              <select
+                class="formbold-form-input"
+                name="occupation"
+                id="occupation"
+                formControlName="categoryId"
+              >
+                <option *ngFor="let item of categories" [value]="item.id">
+                  {{ item.name }}
+                </option>
+              </select>
+              <div
+                *ngIf="
+                  addsubcategoryform.get('categoryId')?.errors != null &&
+                  addsubcategoryform.get('categoryId')?.touched
+                "
+                class="alert mt-2 alert-danger"
+              >
+                <p
+                  *ngIf="addsubcategoryform.get('categoryId')?.errors?.['required']"
+                >
+                  الفئة مطلوب
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <button class="formbold-btn"  >اضافة</button>
+        </form>
+      </div>
+    </div>
+    <style></style>
+  </body>
+</html>
+<app-footer></app-footer>
+<!-- <div class="body">
+    <div class="col-12 space">
+    </div>
+
+    <div>
+        <h2 class=" titlee ">إضافة قسم جديد</h2>
+    </div>
+    <div class="col-12 space">
+    </div>
+    <div class="container">
+        <div class="row">
+           
+            <div class="col-12 ">
+               
+                <form [formGroup]='addsubcategoryform'(ngSubmit)='submitaddsubcategoryform(addsubcategoryform)'>
+                    <div class="sub-category-info ">
+
+                        <div class="form-group ">
+                            <input type="text"  formControlName='name' class="form-control input"  
+                                aria-describedby="sub-category-name">
+                            <label class=" labell" for="sub-category-name">إسم القسم </label>
+                        </div>
+                        <div class="form-group ">
+                            <input type="file"  formControlName='imagePath'  (change)="selectImage($event)"  class="form-control input"  
+                                aria-describedby="sub-category-name">
+                            <label class=" labell" for="sub-category-name">صوره القسم </label>
+                        </div>
+
+                        <div class="form-group" >
+                            <select class="form-control form-control-sm input selector"  formControlName='categoryId'>
+                                <option *ngFor="let item of categories" [value]="item.id"> {{item.name}} </option>
+                              
+                            </select>
+                          
+                            
+                            <label class="labell " for="product-category">الفئة </label>
+                        </div>
+
+
+                        <button type="submit" class="btn submit">إضافة</button>
+
+                    </div>
+                </form>
+            </div>
+
+
+            <div class="col-12 space ">
+            </div>
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+    </div>
+</div> -->

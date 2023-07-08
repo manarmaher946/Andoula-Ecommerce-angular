@@ -1,0 +1,63 @@
+.main {
+    padding-top: 6rem;
+   }
+   .labell {
+       text-align: right;
+       border: 2px solid #cbc5b4;
+       background-color: #fffcf7;
+       color: black;
+       width: 10rem;
+       height: 2rem;
+       border-radius: 7px;
+       opacity: 0.88;
+       
+       
+   }
+   
+   .titlee {
+       border-radius: 7px;
+       opacity: 0.88;
+       display: flex;
+       text-align: center;
+       width: 30%;
+       height: 3rem;
+      
+       justify-content: center;
+   
+       // color: #010117;
+       text-shadow:
+           -1px -1px 0 #948e85,
+           1px -1px 0 #fffcf7,
+           -1px 1px 0 #fffcf7,
+           1px 1px 0 #fffcf7;
+   }
+   
+   
+   
+   
+   
+   .tablee {
+       background-color: #f4f1f1b9;
+       border-radius: 7px;
+       cursor: pointer;
+       width: 70rem;
+       text-align: center;
+       
+       overflow: scroll;
+       height: 22rem;
+       overflow: auto;
+       scrollbar-width: thin;
+   }
+   
+   
+   thead {
+       color: #846185;
+   }
+   .return-btn{
+       color: #cbc5b4;
+       background-color: #934694;
+   }
+   .return-btn:hover{
+       color: black;
+       background-color: #cf96d0;
+   }

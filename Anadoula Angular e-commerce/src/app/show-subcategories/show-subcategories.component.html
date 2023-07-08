@@ -1,0 +1,39 @@
+<app-navbar></app-navbar>
+
+<div class="body"  style="direction: rtl;">
+    <div class="col-12 space"></div>
+  
+    <div class="text-center">
+      <h2 class="titlee">الفئات</h2>
+    </div>
+  
+    <div class="container">
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+          <form>
+            <div class="category-info col-12">
+              <ul class="list-group ul">
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                  *ngFor="let item of subcategories"
+                >
+                  {{ item.name }}
+  
+                  <span class="badge badge-pill"
+                    ><div>
+                      <a class="text-danger" (click)="deleteitem(item.id)"
+                        ><i class="fas fa-trash fa-lg"></i
+                      ></a></div
+                  ></span>
+                </li>
+              </ul>
+            </div>
+          </form>
+        </div>
+  
+        <div class="col-md-12 space"></div>
+      </div>
+    </div>
+  </div>
+  <app-footer></app-footer>

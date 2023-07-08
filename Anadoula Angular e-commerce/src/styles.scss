@@ -1,0 +1,32 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+   
+    background: linear-gradient(0deg, rgba(249, 245, 246, 1) 0%, rgba(236, 201, 238, 1) 100%);
+
+
+    scroll-behavior: auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+
+    color: #2D033B;
+    overflow-x: hidden;
+
+}
+.titlee {
+    border-radius: 7px;
+    opacity: 0.88;
+    display: flex;
+    text-align: center;
+    width: 30%;
+    height: 3rem;
+    margin-left: 35%;
+    justify-content: center;
+
+    color: #270338;
+    text-shadow:
+      -1.5px -1.5px 0 #948e85, 
+      1.5px -1.5px 0 #fffcf7,
+      -1.5px 1.5px 0 #fffcf7,  
+      1.5px 1.5px 0 #fffcf7; 
+}

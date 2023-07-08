@@ -1,0 +1,42 @@
+.body {
+    padding-top: 1rem;
+   }
+   
+   
+   
+     .titlee {
+       border-radius: 7px;
+       opacity: 0.88;
+       display: flex;
+       text-align: center;
+       width: 30%;
+       height: 3rem;
+       
+       justify-content: center;
+   
+       // color: #010117;
+       text-shadow:
+           -1px -1px 0 #948e85,
+           1px -1px 0 #fffcf7,
+           -1px 1px 0 #fffcf7,
+           1px 1px 0 #fffcf7;
+   }
+   
+   .tablee {
+       background-color: #f4f1f1b9;
+       border-radius: 7px;
+       cursor: pointer;
+       width: 70rem;
+       text-align: center;
+       margin-right: 10rem;
+       overflow: scroll;
+       height: 22rem;
+       overflow: auto;
+       scrollbar-width: thin;
+   }
+   
+   
+   thead {
+    background-color: #441b3188;
+    border: 2px solid #6b2a6183;
+   }

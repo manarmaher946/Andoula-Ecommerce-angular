@@ -1,0 +1,45 @@
+<div class="body">
+    <app-navbar></app-navbar>
+
+    <div class="container"  style="direction: rtl;">
+        <div class="row">
+            <div class="col-12 space">
+            </div>
+            <div>
+                <h2 class=" titlee">المنتجات </h2>
+            </div>
+            <div class="col-12 " style="height: 2rem;">
+            </div>
+
+            <div class="col-md-4 mb-3" *ngFor="let item of products">
+
+                <div class="card" >
+
+                    <div class="card-body d-flex justify-content-center">
+                        <div class="text-center">
+                            <h5 class="card-title">{{item.name}}</h5>
+                            <img src="{{item.imagePath}}" alt="Product Image" class="img-fluid d-flex align-items-center">
+                            <p class="card-text">{{item.description}}</p>
+                            <p class="card-text">Price: {{item.price}}$</p>
+                            <h1 class="btn btn-success" *ngIf="item.isAvailable == true">متاح</h1>
+                            <h1 class="btn btn-success" *ngIf="item.isAvailable == false">غير متاح </h1>
+                            <span class="badge badge-pill">
+                                <a [routerLink]="['/editproduct', item.id]">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                </a>
+                            </span>
+                            <span class="badge badge-pill">
+                                <div>
+                                    <a class="text-danger" (click)="deleteitem(item.id)">
+                                        <i class="fas fa-trash fa-lg"></i>
+                                    </a>
+                                </div>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>
